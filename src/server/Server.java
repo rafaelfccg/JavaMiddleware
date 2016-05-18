@@ -12,11 +12,11 @@ public class Server {
 	private static Scanner in;
 
 	public static void main(String[] args) throws UnknownHostException, ClassNotFoundException, IOException{
-		
+		//create invoker
 		TextProcessingInvoker invoker = new TextProcessingInvoker(2323);
 		
 		NamingProxy namingProxy = new NamingProxy("localhost", 12345);
-		
+		//create proxy with given port number
 		TextProcessingProxy textProcessing = new TextProcessingProxy(2323);
 		in = new Scanner(System.in); 
 		System.out.println("Input the wanted object Id:");

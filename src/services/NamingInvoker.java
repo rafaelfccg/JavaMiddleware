@@ -13,7 +13,7 @@ public class NamingInvoker {
 		ServerRequestHandler handler = new ServerRequestHandler(port);
 		
 		NamingService implementation = new NamingService();
-		
+		//start naming service
 		while(true){
 			
 			Message request = Marshaller.unmarshall(handler.receive());
@@ -25,15 +25,12 @@ public class NamingInvoker {
 				ClientProxy clientProxy = (ClientProxy) request.getParameters().get(1);
 				System.out.println("bind object at host " + clientProxy.getHost() + " and id"+clientProxy.getObjectId());
 				implementation.bind(name, clientProxy);
-				
 				Message response = new Message();
 				
 				handler.send(Marshaller.marshall(response));
 			}else if(method.equals("lookup")){
 				String name = (String) request.getParameters().get(0);
-
 				ClientProxy proxy = implementation.lookup(name);
-				
 				Message response = new Message();
 				response.setResult(proxy);
 				
