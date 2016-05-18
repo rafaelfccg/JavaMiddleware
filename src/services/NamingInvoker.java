@@ -6,7 +6,6 @@ import middleware.ClientProxy;
 import middleware.Marshaller;
 import middleware.Message;
 import middleware.ServerRequestHandler;
-import server.TextProcessing;
 
 public class NamingInvoker {
 
@@ -24,7 +23,7 @@ public class NamingInvoker {
 			if(method.equals("bind")){
 				String name = (String) request.getParameters().get(0);
 				ClientProxy clientProxy = (ClientProxy) request.getParameters().get(1);
-				System.out.println("bind object at host"+clientProxy.getHost());
+				System.out.println("bind object at host " + clientProxy.getHost() + " and id"+clientProxy.getObjectId());
 				implementation.bind(name, clientProxy);
 				
 				Message response = new Message();

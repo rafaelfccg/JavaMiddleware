@@ -29,8 +29,8 @@ public class TextProcessingProxy extends ClientProxy{
 		invocation.setObjectId(this.getObjectId());
 	
 		Object result = Requestor.invoke(invocation);
-		
-		return (int) result;
+		Integer value = (Integer) result;
+		return value.intValue();
 	}
 	
 }

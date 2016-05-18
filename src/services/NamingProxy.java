@@ -3,14 +3,14 @@ package services;
 import java.io.IOException;
 import java.net.UnknownHostException;
 
-import client.TextProcessingProxy;
 import middleware.ClientProxy;
-import middleware.Message;
 import middleware.Requestor;
 import middleware.wrapper.Invocation;
 
 public class NamingProxy extends ClientProxy{
 	
+	private static final long serialVersionUID = -8963214206719992299L;
+
 	public NamingProxy(int port){
 		super(port);
 	}

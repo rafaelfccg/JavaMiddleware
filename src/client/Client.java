@@ -25,6 +25,14 @@ public class Client {
 			System.out.println("Number of words:"+test.countWords(input));
 		}
 		
+		/*
+		TextProcessingProxy test = (TextProcessingProxy) namingProxy.lookup("TextProcessing");
+		System.out.println(test.countWords("Lorem ipsum dolot sit amet"));
+		
+		TextProcessingProxy test2 = (TextProcessingProxy) namingProxy.lookup("TextProcessing2");
+		System.out.println(test2.countWords("Lorem ipsum"));
+		*/
+		
 	}
 	
 }
