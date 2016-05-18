@@ -11,6 +11,11 @@ public class TextProcessingProxy extends ClientProxy{
 
 
 	private static final long serialVersionUID = -3621718057763974845L;
+	
+	public TextProcessingProxy(int port){
+		super(port);
+		
+	}
 
 	public int countWords(String text) throws UnknownHostException, ClassNotFoundException, IOException{
 		

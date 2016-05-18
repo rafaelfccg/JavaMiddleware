@@ -15,12 +15,12 @@ public class Server {
 		
 		NamingProxy namingProxy = new NamingProxy("localhost", 12345);
 		
-		TextProcessingProxy textProcessing = new TextProcessingProxy();
+		TextProcessingProxy textProcessing = new TextProcessingProxy(2323);
 		in = new Scanner(System.in); 
 		System.out.println("Input the wanted object Id:");
 		textProcessing.setObjectId(in.nextInt());
-		textProcessing.setHost("localhost");
 		System.out.println("Input the name of the service");
+		System.out.println("will bind object with host"+ textProcessing.getHost());
 		namingProxy.bind(in.next(), textProcessing);
 		
 		System.out.println("Running server...");

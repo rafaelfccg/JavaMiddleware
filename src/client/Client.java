@@ -14,10 +14,13 @@ public class Client {
 		
 		NamingProxy namingProxy = new NamingProxy("localhost", 12345);
 		
-		TextProcessingProxy test = (TextProcessingProxy) namingProxy.lookup("textp2");
-		System.out.print(test.getObjectId());
 		in = new Scanner(System.in);
 		while(true){
+			System.out.println("What service do you want to use?");
+			TextProcessingProxy test = (TextProcessingProxy) namingProxy.lookup(in.next());
+			System.out.println("Object recovered:\nobjectId: "+test.getObjectId() + "\nhost: "+test.getHost()+"\nport: "+test.getPort());
+			in.nextLine();
+			System.out.println("Now type a sentence and the service will count the number of words.");
 			String input = in.nextLine();
 			System.out.println("Number of words:"+test.countWords(input));
 		}

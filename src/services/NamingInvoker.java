@@ -24,6 +24,7 @@ public class NamingInvoker {
 			if(method.equals("bind")){
 				String name = (String) request.getParameters().get(0);
 				ClientProxy clientProxy = (ClientProxy) request.getParameters().get(1);
+				System.out.println("bind object at host"+clientProxy.getHost());
 				implementation.bind(name, clientProxy);
 				
 				Message response = new Message();
